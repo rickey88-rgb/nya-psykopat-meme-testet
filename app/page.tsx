@@ -20,7 +20,7 @@ export default function HomePage() {
           display: 'grid',
           alignItems: 'end',
           position: 'relative',
-          padding: '32px 0 42px',
+          padding: '36px 0 42px',
           overflow: 'hidden',
         }}
       >
@@ -29,33 +29,55 @@ export default function HomePage() {
             position: 'absolute',
             inset: 0,
             background:
-              'radial-gradient(circle at 50% 18%, rgba(196, 13, 29, 0.25), transparent 18%), linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.75) 56%, rgba(0,0,0,0.94) 100%)',
+              'radial-gradient(circle at 50% 14%, rgba(196, 13, 29, 0.34), transparent 26%), linear-gradient(180deg, rgba(0,0,0,0.16), rgba(0,0,0,0.72) 58%, rgba(0,0,0,0.95) 100%)',
           }}
         />
 
         <div
           style={{
             position: 'absolute',
-            inset: 0,
-            display: 'grid',
-            placeItems: 'center',
-            opacity: 0.92,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            display: 'flex',
+            justifyContent: 'center',
             pointerEvents: 'none',
-            transform: 'translateY(-4%)',
+            zIndex: 1,
+            opacity: 0.98,
+            paddingBottom: 'min(37svh, 320px)',
           }}
         >
           <DemonFace />
         </div>
 
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-          <div className="glass-panel" style={{ padding: '26px 22px 24px', maxWidth: 560 }}>
+          <div
+            className="glass-panel"
+            style={{
+              padding: '26px 22px 24px',
+              maxWidth: 560,
+            }}
+          >
             <div className="section-kicker">Psykopattestet</div>
-            <h1 className="section-title" style={{ fontSize: 'clamp(2.7rem, 10vw, 4.75rem)', marginTop: 8 }}>
+            <h1
+              className="section-title"
+              style={{
+                fontSize: 'clamp(2.7rem, 10vw, 4.75rem)',
+                marginTop: 8,
+              }}
+            >
               Hur mörk
               <br />
               är du egentligen?
             </h1>
-            <p style={{ margin: '0 0 22px', color: '#e8cbcb', lineHeight: 1.6, fontSize: '1.05rem' }}>
+            <p
+              style={{
+                margin: '0 0 22px',
+                color: '#e8cbcb',
+                lineHeight: 1.6,
+                fontSize: '1.05rem',
+              }}
+            >
               30 brutala frågor. Ett resultat du kanske inte vill se.
             </p>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
@@ -73,7 +95,15 @@ export default function HomePage() {
       <section id="morkret" className="container" style={{ padding: '28px 20px 24px' }}>
         <div className="glass-panel" style={{ padding: '24px 20px' }}>
           <div className="section-kicker">Något kallare än samvete</div>
-          <div style={{ display: 'grid', gap: 12, fontSize: 'clamp(1.25rem, 4.9vw, 1.8rem)', lineHeight: 1.15, letterSpacing: '-0.03em' }}>
+          <div
+            style={{
+              display: 'grid',
+              gap: 12,
+              fontSize: 'clamp(1.25rem, 4.9vw, 1.8rem)',
+              lineHeight: 1.15,
+              letterSpacing: '-0.03em',
+            }}
+          >
             <div>Vissa människor bär på något kallare än samvete.</div>
             <div>Vissa njuter av kontroll.</div>
             <div>Vissa känner nästan ingenting alls.</div>
@@ -84,9 +114,12 @@ export default function HomePage() {
       <section className="container" style={{ padding: '0 20px 24px' }}>
         <div className="glass-panel" style={{ padding: '24px 20px' }}>
           <div className="section-kicker">Det här är inte ett gulligt personlighetstest</div>
-          <h2 className="section-title">Det här testet pressar fram den del av dig som helst borde stanna under ytan.</h2>
+          <h2 className="section-title">
+            Det här testet pressar fram den del av dig som helst borde stanna under ytan.
+          </h2>
           <p className="section-body" style={{ marginBottom: 0 }}>
-            Testet rör sig genom manipulation, känslokyla, maktbegär och rå skuggsida. Inte för att förklara bort mörkret — utan för att se hur nära det ligger.
+            Testet rör sig genom manipulation, känslokyla, maktbegär och rå skuggsida. Inte för att
+            förklara bort mörkret — utan för att se hur nära det ligger.
           </p>
         </div>
       </section>
@@ -94,7 +127,14 @@ export default function HomePage() {
       <section className="container" style={{ padding: '0 20px 24px' }}>
         <div className="glass-panel" style={{ padding: '24px 20px' }}>
           <div className="section-kicker">Du borde nog inte göra det här</div>
-          <div style={{ fontSize: 'clamp(1.7rem, 6vw, 2.9rem)', lineHeight: 0.98, letterSpacing: '-0.05em', marginBottom: 16 }}>
+          <div
+            style={{
+              fontSize: 'clamp(1.7rem, 6vw, 2.9rem)',
+              lineHeight: 0.98,
+              letterSpacing: '-0.05em',
+              marginBottom: 16,
+            }}
+          >
             De flesta borde nog inte göra det här testet.
             <br />
             Frågan är om du vågar.
@@ -121,7 +161,8 @@ export default function HomePage() {
                   padding: '14px 16px',
                   borderRadius: 18,
                   border: '1px solid rgba(207, 26, 43, 0.22)',
-                  background: 'linear-gradient(180deg, rgba(25, 6, 8, 0.94), rgba(8, 8, 8, 0.9))',
+                  background:
+                    'linear-gradient(180deg, rgba(25, 6, 8, 0.94), rgba(8, 8, 8, 0.9))',
                   fontSize: '1.08rem',
                   letterSpacing: '0.04em',
                   textTransform: 'uppercase',
@@ -138,7 +179,9 @@ export default function HomePage() {
       <section className="container" style={{ padding: '0 20px 72px' }}>
         <div className="glass-panel" style={{ padding: '28px 20px 24px', textAlign: 'center' }}>
           <div className="section-kicker">Sista steget</div>
-          <h2 className="section-title" style={{ marginBottom: 10 }}>Vågar du göra testet?</h2>
+          <h2 className="section-title" style={{ marginBottom: 10 }}>
+            Vågar du göra testet?
+          </h2>
           <p className="section-body" style={{ margin: '0 auto 20px', maxWidth: 560 }}>
             Det finns bara ett sätt att se vad som finns där inne.
           </p>
@@ -146,7 +189,9 @@ export default function HomePage() {
             <Link className="cta-button" href="/test">
               Starta testet
             </Link>
-            <div style={{ color: '#b99191', fontSize: '0.94rem' }}>30 frågor · cirka 3 minuter · mörkerprofil efteråt</div>
+            <div style={{ color: '#b99191', fontSize: '0.94rem' }}>
+              30 frågor · cirka 3 minuter · mörkerprofil efteråt
+            </div>
           </div>
         </div>
       </section>
