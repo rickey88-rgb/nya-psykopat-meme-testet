@@ -145,7 +145,7 @@ export default function HomePage() {
 
       <section className="container" style={{ padding: '0 20px 24px' }}>
         <div className="glass-panel" style={{ padding: '24px 20px', textAlign: 'center' }}>
-          <div className="section-kicker">Du borde nog inte göra det här</div>
+          <div className="section-kicker">Är detta verkligen för dig?</div>
           <div
             style={{
               fontSize: 'clamp(1.7rem, 6vw, 2.9rem)',
@@ -159,7 +159,7 @@ export default function HomePage() {
             Frågan är om du vågar.
           </div>
           <p className="section-body" style={{ marginBottom: 0 }}>
-            människor som det här finns på riktigt. Vissa ruttnar bort bakom lås och bom. Andra bär
+            Människor som det här finns på riktigt. Vissa ruttnar bort bakom lås och bom. Andra bär
             kostym och får hörnkontor
           </p>
         </div>
