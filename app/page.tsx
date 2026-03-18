@@ -38,7 +38,7 @@ export default function HomePage() {
             position: 'absolute',
             left: '50%',
             transform: 'translateX(-50%)',
-            bottom: 'clamp(350px, 47svh, 470px)',
+            bottom: 'clamp(300px, 40svh, 400px)',
             width: 'min(112vw, 780px)',
             height: 'min(66svh, 620px)',
             pointerEvents: 'none',
@@ -206,7 +206,7 @@ export default function HomePage() {
                           fontWeight: 800,
                         }}
                       >
-                        Värsta möjliga
+                        
                       </span>
                       <span>{name}</span>
                     </div>
@@ -234,7 +234,7 @@ export default function HomePage() {
               Starta testet
             </Link>
             <div style={{ color: '#b99191', fontSize: '0.94rem' }}>
-              30 frågor · cirka 3 minuter · mörkerprofil efteråt
+              30 frågor · cirka 3 minuter · Direkt analys
             </div>
           </div>
         </div>
