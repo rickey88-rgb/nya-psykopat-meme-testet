@@ -38,7 +38,7 @@ export default function HomePage() {
             position: 'absolute',
             left: '50%',
             transform: 'translateX(-50%)',
-           bottom: 'clamp(340px, 46svh, 460px)',
+           bottom: 'clamp(360px, 48svh, 480px)',
             width: 'min(112vw, 780px)',
             height: 'min(66svh, 620px)',
             pointerEvents: 'none',
