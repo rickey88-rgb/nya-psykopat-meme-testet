@@ -1,5 +1,5 @@
+import Image from 'next/image';
 import Link from 'next/link';
-import { DemonFace } from '@/components/DemonFace';
 import { archetypes } from '@/lib/test-data';
 
 const resultNames = [
@@ -36,20 +36,40 @@ export default function HomePage() {
         <div
           style={{
             position: 'absolute',
-            left: 0,
-            right: 0,
-            bottom: 0,
-            display: 'flex',
-            justifyContent: 'center',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            bottom: 'clamp(165px, 23svh, 235px)',
+            width: 'min(112vw, 780px)',
+            height: 'min(66svh, 620px)',
             pointerEvents: 'none',
             zIndex: 1,
-            opacity: 0.99,
-            paddingBottom: 'clamp(220px, 30svh, 300px)',
-            transform: 'translateY(8px)',
+            opacity: 0.98,
+            filter: 'drop-shadow(0 28px 80px rgba(0,0,0,0.95))',
           }}
         >
-          <DemonFace />
+          <Image
+            src="/hero-demon-v2.png"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            style={{
+              objectFit: 'contain',
+              objectPosition: 'center top',
+            }}
+          />
         </div>
+
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            zIndex: 1,
+            pointerEvents: 'none',
+            background:
+              'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 54%, rgba(0,0,0,0.18) 66%, rgba(0,0,0,0.48) 80%, rgba(0,0,0,0.86) 100%)',
+          }}
+        />
 
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <div
