@@ -20,7 +20,7 @@ export default function HomePage() {
           display: 'grid',
           alignItems: 'end',
           position: 'relative',
-          padding: '36px 0 42px',
+          padding: '28px 0 42px',
           overflow: 'hidden',
         }}
       >
@@ -29,7 +29,7 @@ export default function HomePage() {
             position: 'absolute',
             inset: 0,
             background:
-              'radial-gradient(circle at 50% 14%, rgba(196, 13, 29, 0.34), transparent 26%), linear-gradient(180deg, rgba(0,0,0,0.16), rgba(0,0,0,0.72) 58%, rgba(0,0,0,0.95) 100%)',
+              'radial-gradient(circle at 50% 14%, rgba(196, 13, 29, 0.38), transparent 26%), linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.72) 58%, rgba(0,0,0,0.95) 100%)',
           }}
         />
 
@@ -43,8 +43,9 @@ export default function HomePage() {
             justifyContent: 'center',
             pointerEvents: 'none',
             zIndex: 1,
-            opacity: 0.98,
-            paddingBottom: 'min(37svh, 320px)',
+            opacity: 0.99,
+            paddingBottom: 'clamp(220px, 30svh, 300px)',
+            transform: 'translateY(8px)',
           }}
         >
           <DemonFace />

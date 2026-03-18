@@ -1,6 +1,6 @@
 export function DemonFace({ compact = false }: { compact?: boolean }) {
-  const width = compact ? 'min(82vw, 340px)' : 'min(96vw, 660px)';
-  const height = compact ? 220 : 360;
+  const width = compact ? 'min(84vw, 360px)' : 'min(96vw, 720px)';
+  const height = compact ? 250 : 390;
 
   return (
     <div
@@ -12,16 +12,16 @@ export function DemonFace({ compact = false }: { compact?: boolean }) {
         margin: '0 auto',
         overflow: 'visible',
         pointerEvents: 'none',
-        filter: 'drop-shadow(0 22px 60px rgba(0,0,0,0.8))',
+        filter: 'drop-shadow(0 28px 80px rgba(0,0,0,0.9))',
       }}
     >
       <div
         style={{
           position: 'absolute',
-          inset: '-6% -8% 20%',
+          inset: '-8% -10% 10%',
           background:
-            'radial-gradient(circle at 50% 30%, rgba(170, 10, 25, 0.34), rgba(70, 0, 8, 0.18) 34%, rgba(0,0,0,0) 72%)',
-          filter: 'blur(22px)',
+            'radial-gradient(circle at 50% 24%, rgba(170, 9, 23, 0.42), rgba(98, 0, 8, 0.16) 28%, rgba(0,0,0,0) 68%)',
+          filter: 'blur(26px)',
           opacity: 0.95,
         }}
       />
@@ -29,34 +29,238 @@ export function DemonFace({ compact = false }: { compact?: boolean }) {
       <div
         style={{
           position: 'absolute',
-          left: '6%',
-          top: '0%',
-          width: '24%',
-          height: '42%',
+          left: '18%',
+          right: '18%',
+          bottom: '-2%',
+          height: '46%',
           background:
-            'linear-gradient(180deg, rgba(24,24,24,1), rgba(0,0,0,1))',
-          clipPath:
-            'polygon(54% 0, 70% 8%, 88% 20%, 100% 100%, 74% 88%, 58% 60%, 46% 38%, 28% 18%)',
-          transform: 'rotate(-18deg)',
-          boxShadow:
-            '0 0 18px rgba(0,0,0,0.95), 0 0 36px rgba(120, 6, 16, 0.2)',
+            'radial-gradient(circle at 50% 10%, rgba(12,12,12,0.96), rgba(0,0,0,0.98) 56%, rgba(0,0,0,0) 100%)',
+          filter: 'blur(10px)',
+          opacity: 0.95,
         }}
       />
 
       <div
         style={{
           position: 'absolute',
-          right: '6%',
-          top: '0%',
-          width: '24%',
-          height: '42%',
-          background:
-            'linear-gradient(180deg, rgba(24,24,24,1), rgba(0,0,0,1))',
+          left: '1%',
+          top: '-2%',
+          width: '27%',
+          height: '54%',
+          background: 'linear-gradient(180deg, rgba(34,34,34,0.92), rgba(3,3,3,1))',
           clipPath:
-            'polygon(46% 0, 30% 8%, 12% 20%, 0 100%, 26% 88%, 42% 60%, 54% 38%, 72% 18%)',
+            'polygon(44% 0, 24% 10%, 10% 28%, 7% 46%, 14% 61%, 26% 74%, 44% 98%, 66% 100%, 72% 78%, 63% 52%, 56% 28%)',
+          transform: 'rotate(-18deg)',
+          boxShadow: '0 0 28px rgba(0,0,0,0.96)',
+          opacity: 0.98,
+        }}
+      />
+
+      <div
+        style={{
+          position: 'absolute',
+          left: '10%',
+          top: '11%',
+          width: '18%',
+          height: '30%',
+          background: 'linear-gradient(180deg, rgba(16,16,16,0.95), rgba(0,0,0,1))',
+          clipPath: 'polygon(52% 0, 20% 100%, 84% 80%)',
+          transform: 'rotate(-28deg)',
+          opacity: 0.82,
+        }}
+      />
+
+      <div
+        style={{
+          position: 'absolute',
+          right: '1%',
+          top: '-2%',
+          width: '27%',
+          height: '54%',
+          background: 'linear-gradient(180deg, rgba(34,34,34,0.92), rgba(3,3,3,1))',
+          clipPath:
+            'polygon(56% 0, 76% 10%, 90% 28%, 93% 46%, 86% 61%, 74% 74%, 56% 98%, 34% 100%, 28% 78%, 37% 52%, 44% 28%)',
           transform: 'rotate(18deg)',
+          boxShadow: '0 0 28px rgba(0,0,0,0.96)',
+          opacity: 0.98,
+        }}
+      />
+
+      <div
+        style={{
+          position: 'absolute',
+          right: '10%',
+          top: '11%',
+          width: '18%',
+          height: '30%',
+          background: 'linear-gradient(180deg, rgba(16,16,16,0.95), rgba(0,0,0,1))',
+          clipPath: 'polygon(48% 0, 80% 100%, 16% 80%)',
+          transform: 'rotate(28deg)',
+          opacity: 0.82,
+        }}
+      />
+
+      <div
+        style={{
+          position: 'absolute',
+          left: '17%',
+          right: '17%',
+          top: '11%',
+          height: '78%',
+          background:
+            'radial-gradient(circle at 50% 12%, rgba(96,96,96,0.36), rgba(20,20,20,0.98) 30%, rgba(2,2,2,1) 74%)',
+          clipPath:
+            'polygon(8% 100%, 9% 76%, 12% 48%, 20% 20%, 34% 5%, 50% 0, 66% 5%, 80% 20%, 88% 48%, 91% 76%, 92% 100%, 68% 94%, 50% 90%, 32% 94%)',
           boxShadow:
-            '0 0 18px rgba(0,0,0,0.95), 0 0 36px rgba(120, 6, 16, 0.2)',
+            'inset 0 -90px 100px rgba(0,0,0,0.98), inset 0 18px 28px rgba(255,255,255,0.05), 0 0 80px rgba(100, 8, 16, 0.18)',
+          animation: 'pageBreath 8s ease-in-out infinite',
+        }}
+      />
+
+      <div
+        style={{
+          position: 'absolute',
+          left: '16%',
+          right: '16%',
+          top: '20%',
+          height: '25%',
+          background:
+            'linear-gradient(180deg, rgba(26,26,26,0.92), rgba(0,0,0,0.96))',
+          clipPath:
+            'polygon(0 58%, 8% 26%, 22% 8%, 40% 14%, 50% 24%, 60% 14%, 78% 8%, 92% 26%, 100% 58%, 82% 74%, 62% 78%, 50% 72%, 38% 78%, 18% 74%)',
+          boxShadow: '0 12px 22px rgba(0,0,0,0.9)',
+          opacity: 0.98,
+        }}
+      />
+
+      <div
+        style={{
+          position: 'absolute',
+          left: '17%',
+          top: '32%',
+          width: '29%',
+          height: '19%',
+          background:
+            'linear-gradient(180deg, rgba(0,0,0,0.98), rgba(0,0,0,0.72))',
+          clipPath: 'polygon(0 54%, 18% 18%, 48% 0, 100% 10%, 84% 56%, 18% 86%)',
+          transform: 'rotate(-7deg)',
+          opacity: 0.98,
+        }}
+      />
+
+      <div
+        style={{
+          position: 'absolute',
+          right: '17%',
+          top: '32%',
+          width: '29%',
+          height: '19%',
+          background:
+            'linear-gradient(180deg, rgba(0,0,0,0.98), rgba(0,0,0,0.72))',
+          clipPath: 'polygon(100% 54%, 82% 18%, 52% 0, 0 10%, 16% 56%, 82% 86%)',
+          transform: 'rotate(7deg)',
+          opacity: 0.98,
+        }}
+      />
+
+      <div
+        style={{
+          position: 'absolute',
+          left: '29%',
+          top: '42%',
+          width: '11%',
+          height: '7%',
+          background:
+            'radial-gradient(circle at 52% 50%, rgba(255,245,220,1) 0, rgba(255,120,120,0.98) 18%, rgba(220,20,35,0.98) 46%, rgba(90,0,8,0.76) 74%, transparent 82%)',
+          clipPath: 'polygon(0 74%, 18% 18%, 64% 0, 100% 34%, 82% 82%, 20% 100%)',
+          transform: 'rotate(-10deg)',
+          boxShadow: '0 0 18px rgba(255, 24, 45, 0.96), 0 0 44px rgba(255, 24, 45, 0.5)',
+          animation: 'eyePulse 2.4s ease-in-out infinite',
+          zIndex: 3,
+        }}
+      />
+
+      <div
+        style={{
+          position: 'absolute',
+          right: '29%',
+          top: '42%',
+          width: '11%',
+          height: '7%',
+          background:
+            'radial-gradient(circle at 48% 50%, rgba(255,245,220,1) 0, rgba(255,120,120,0.98) 18%, rgba(220,20,35,0.98) 46%, rgba(90,0,8,0.76) 74%, transparent 82%)',
+          clipPath: 'polygon(100% 74%, 82% 18%, 36% 0, 0 34%, 18% 82%, 80% 100%)',
+          transform: 'rotate(10deg)',
+          boxShadow: '0 0 18px rgba(255, 24, 45, 0.96), 0 0 44px rgba(255, 24, 45, 0.5)',
+          animation: 'eyePulse 2.4s ease-in-out infinite',
+          zIndex: 3,
+        }}
+      />
+
+      <div
+        style={{
+          position: 'absolute',
+          left: '27%',
+          top: '38.5%',
+          width: '15%',
+          height: '11%',
+          background: 'radial-gradient(circle at 50% 50%, rgba(255,36,52,0.2), rgba(255,0,0,0) 76%)',
+          filter: 'blur(8px)',
+          opacity: 0.95,
+        }}
+      />
+
+      <div
+        style={{
+          position: 'absolute',
+          right: '27%',
+          top: '38.5%',
+          width: '15%',
+          height: '11%',
+          background: 'radial-gradient(circle at 50% 50%, rgba(255,36,52,0.2), rgba(255,0,0,0) 76%)',
+          filter: 'blur(8px)',
+          opacity: 0.95,
+        }}
+      />
+
+      <div
+        style={{
+          position: 'absolute',
+          left: '45%',
+          top: '26%',
+          width: '10%',
+          height: '34%',
+          background:
+            'linear-gradient(180deg, rgba(20,20,20,0.96), rgba(0,0,0,0.9), rgba(0,0,0,0))',
+          clipPath: 'polygon(50% 0, 84% 14%, 68% 100%, 32% 100%, 16% 14%)',
+          opacity: 0.96,
+        }}
+      />
+
+      <div
+        style={{
+          position: 'absolute',
+          left: '46%',
+          top: '13%',
+          width: '8%',
+          height: '18%',
+          background: 'linear-gradient(180deg, rgba(90,10,16,0.42), rgba(0,0,0,0))',
+          clipPath: 'polygon(50% 0, 70% 16%, 54% 100%, 46% 100%, 30% 16%)',
+          opacity: 0.7,
+        }}
+      />
+
+      <div
+        style={{
+          position: 'absolute',
+          left: '20%',
+          right: '20%',
+          bottom: '1%',
+          height: '32%',
+          background:
+            'linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.92) 56%, rgba(0,0,0,1))',
+          filter: 'blur(12px)',
+          opacity: 0.96,
         }}
       />
 
@@ -65,155 +269,12 @@ export function DemonFace({ compact = false }: { compact?: boolean }) {
           position: 'absolute',
           left: '8%',
           right: '8%',
-          top: '12%',
-          height: '80%',
-          background:
-            'radial-gradient(circle at 50% 10%, rgba(88,88,88,0.3), rgba(12,12,12,0.96) 34%, rgba(0,0,0,1) 74%)',
-          clipPath:
-            'polygon(8% 100%, 10% 72%, 13% 46%, 21% 22%, 34% 8%, 50% 3%, 66% 8%, 79% 22%, 87% 46%, 90% 72%, 92% 100%)',
-          boxShadow:
-            'inset 0 -78px 92px rgba(0,0,0,0.98), inset 0 16px 30px rgba(255,255,255,0.05), 0 0 90px rgba(120, 8, 18, 0.16)',
-          animation: 'pageBreath 8.2s ease-in-out infinite',
-        }}
-      />
-
-      <div
-        style={{
-          position: 'absolute',
-          left: '14%',
-          right: '14%',
-          top: '22%',
-          height: '24%',
-          background:
-            'linear-gradient(180deg, rgba(0,0,0,0.96), rgba(0,0,0,0.7) 58%, rgba(0,0,0,0))',
-          clipPath:
-            'polygon(0 42%, 9% 18%, 26% 6%, 40% 10%, 50% 20%, 60% 10%, 74% 6%, 91% 18%, 100% 42%, 86% 60%, 66% 70%, 50% 62%, 34% 70%, 14% 60%)',
-          filter: 'drop-shadow(0 8px 18px rgba(0,0,0,0.95))',
-        }}
-      />
-
-      <div
-        style={{
-          position: 'absolute',
-          left: '21%',
-          top: '41%',
-          width: '22%',
-          height: '12%',
-          background:
-            'linear-gradient(90deg, rgba(255,15,35,0) 0%, rgba(255,70,82,0.75) 20%, rgba(255,185,185,0.98) 50%, rgba(255,70,82,0.75) 80%, rgba(255,15,35,0) 100%)',
-          clipPath:
-            'polygon(0 72%, 8% 38%, 30% 18%, 72% 22%, 100% 58%, 82% 84%, 20% 88%)',
-          transform: 'rotate(-10deg)',
-          boxShadow:
-            '0 0 20px rgba(255, 28, 50, 0.95), 0 0 48px rgba(255, 28, 50, 0.42)',
-          animation: 'eyePulse 2.3s ease-in-out infinite',
-        }}
-      />
-
-      <div
-        style={{
-          position: 'absolute',
-          right: '21%',
-          top: '41%',
-          width: '22%',
-          height: '12%',
-          background:
-            'linear-gradient(270deg, rgba(255,15,35,0) 0%, rgba(255,70,82,0.75) 20%, rgba(255,185,185,0.98) 50%, rgba(255,70,82,0.75) 80%, rgba(255,15,35,0) 100%)',
-          clipPath:
-            'polygon(100% 72%, 92% 38%, 70% 18%, 28% 22%, 0 58%, 18% 84%, 80% 88%)',
-          transform: 'rotate(10deg)',
-          boxShadow:
-            '0 0 20px rgba(255, 28, 50, 0.95), 0 0 48px rgba(255, 28, 50, 0.42)',
-          animation: 'eyePulse 2.3s ease-in-out infinite',
-        }}
-      />
-
-      <div
-        style={{
-          position: 'absolute',
-          left: '18%',
-          top: '35%',
-          width: '28%',
-          height: '18%',
-          background:
-            'linear-gradient(180deg, rgba(0,0,0,0.95), rgba(0,0,0,0.2))',
-          clipPath:
-            'polygon(0 50%, 14% 20%, 44% 8%, 100% 14%, 86% 46%, 18% 74%)',
-          transform: 'rotate(-6deg)',
-          opacity: 0.96,
-        }}
-      />
-
-      <div
-        style={{
-          position: 'absolute',
-          right: '18%',
-          top: '35%',
-          width: '28%',
-          height: '18%',
-          background:
-            'linear-gradient(180deg, rgba(0,0,0,0.95), rgba(0,0,0,0.2))',
-          clipPath:
-            'polygon(100% 50%, 86% 20%, 56% 8%, 0 14%, 14% 46%, 82% 74%)',
-          transform: 'rotate(6deg)',
-          opacity: 0.96,
-        }}
-      />
-
-      <div
-        style={{
-          position: 'absolute',
-          left: '44%',
-          top: '24%',
-          width: '12%',
-          height: '42%',
-          background:
-            'linear-gradient(180deg, rgba(0,0,0,0.96), rgba(0,0,0,0.55), rgba(0,0,0,0))',
-          clipPath: 'polygon(50% 0, 82% 18%, 66% 100%, 34% 100%, 18% 18%)',
-          opacity: 0.88,
-        }}
-      />
-
-      <div
-        style={{
-          position: 'absolute',
-          left: '11%',
           bottom: '-2%',
-          width: '30%',
-          height: '34%',
+          height: '28%',
           background:
-            'radial-gradient(circle at 50% 30%, rgba(0,0,0,0.55), rgba(0,0,0,0.92) 60%, rgba(0,0,0,0) 100%)',
-          filter: 'blur(12px)',
-          opacity: 0.85,
-        }}
-      />
-
-      <div
-        style={{
-          position: 'absolute',
-          right: '11%',
-          bottom: '-2%',
-          width: '30%',
-          height: '34%',
-          background:
-            'radial-gradient(circle at 50% 30%, rgba(0,0,0,0.55), rgba(0,0,0,0.92) 60%, rgba(0,0,0,0) 100%)',
-          filter: 'blur(12px)',
-          opacity: 0.85,
-        }}
-      />
-
-      <div
-        style={{
-          position: 'absolute',
-          left: '22%',
-          right: '22%',
-          top: '14%',
-          height: '62%',
-          borderRadius: '50%',
-          background:
-            'radial-gradient(circle at 50% 22%, rgba(255,255,255,0.04), transparent 58%)',
-          filter: 'blur(16px)',
-          opacity: 0.42,
+            'radial-gradient(circle at 50% 10%, rgba(0,0,0,0.65), rgba(0,0,0,0.98) 60%, rgba(0,0,0,0) 100%)',
+          filter: 'blur(14px)',
+          opacity: 0.92,
         }}
       />
     </div>
