@@ -13,7 +13,7 @@ const resultNames = [
 
 export default function HomePage() {
   return (
-    <main className="page-shell">
+    <main className="page-shell" style={{ textAlign: 'center' }}>
       <section
         style={{
           minHeight: '100svh',
@@ -38,7 +38,7 @@ export default function HomePage() {
             position: 'absolute',
             left: '50%',
             transform: 'translateX(-50%)',
-           bottom: 'clamp(360px, 48svh, 480px)',
+            bottom: 'clamp(350px, 47svh, 470px)',
             width: 'min(112vw, 780px)',
             height: 'min(66svh, 620px)',
             pointerEvents: 'none',
@@ -77,6 +77,7 @@ export default function HomePage() {
             style={{
               padding: '26px 22px 24px',
               maxWidth: 560,
+              textAlign: 'center',
             }}
           >
             <div className="section-kicker">Psykopattestet</div>
@@ -101,11 +102,8 @@ export default function HomePage() {
             >
               30 brutala frågor. Ett resultat du kanske inte vill se.
             </p>
-            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-              <Link className="cta-button" href="#morkret">
-                Gå ner i mörkret
-              </Link>
-              <Link className="ghost-button" href="/test">
+            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
+              <Link className="cta-button" href="/test">
                 Starta testet
               </Link>
             </div>
@@ -114,7 +112,7 @@ export default function HomePage() {
       </section>
 
       <section id="morkret" className="container" style={{ padding: '28px 20px 24px' }}>
-        <div className="glass-panel" style={{ padding: '24px 20px' }}>
+        <div className="glass-panel" style={{ padding: '24px 20px', textAlign: 'center' }}>
           <div className="section-kicker">Något kallare än samvete</div>
           <div
             style={{
@@ -133,7 +131,7 @@ export default function HomePage() {
       </section>
 
       <section className="container" style={{ padding: '0 20px 24px' }}>
-        <div className="glass-panel" style={{ padding: '24px 20px' }}>
+        <div className="glass-panel" style={{ padding: '24px 20px', textAlign: 'center' }}>
           <div className="section-kicker">Det här är inte ett gulligt personlighetstest</div>
           <h2 className="section-title">
             Det här testet pressar fram den del av dig som helst borde stanna under ytan.
@@ -146,7 +144,7 @@ export default function HomePage() {
       </section>
 
       <section className="container" style={{ padding: '0 20px 24px' }}>
-        <div className="glass-panel" style={{ padding: '24px 20px' }}>
+        <div className="glass-panel" style={{ padding: '24px 20px', textAlign: 'center' }}>
           <div className="section-kicker">Du borde nog inte göra det här</div>
           <div
             style={{
@@ -161,38 +159,63 @@ export default function HomePage() {
             Frågan är om du vågar.
           </div>
           <p className="section-body" style={{ marginBottom: 0 }}>
-            Människor som de här finns på riktigt.
-            <br />
-            <strong style={{ color: '#ffb4b9', fontWeight: 700 }}>
-              Vissa ruttnar bakom lås och bom. Andra bär kostym och styr världen.
-            </strong>
+            människor som det här finns på riktigt. Vissa ruttnar bort bakom lås och bom. Andra bär
+            kostym och får hörnkontor
           </p>
         </div>
       </section>
 
       <section className="container" style={{ padding: '0 20px 24px' }}>
-        <div className="glass-panel" style={{ padding: '24px 20px' }}>
+        <div className="glass-panel" style={{ padding: '24px 20px', textAlign: 'center' }}>
           <div className="section-kicker">Om du går vidare</div>
           <h2 className="section-title">Du kan möta resultat som de här</h2>
-          <ul className="list-reset" style={{ display: 'grid', gap: 12, marginTop: 18 }}>
-            {resultNames.map((name) => (
-              <li
-                key={name}
-                style={{
-                  padding: '14px 16px',
-                  borderRadius: 18,
-                  border: '1px solid rgba(207, 26, 43, 0.22)',
-                  background:
-                    'linear-gradient(180deg, rgba(25, 6, 8, 0.94), rgba(8, 8, 8, 0.9))',
-                  fontSize: '1.08rem',
-                  letterSpacing: '0.04em',
-                  textTransform: 'uppercase',
-                  fontWeight: 700,
-                }}
-              >
-                {name}
-              </li>
-            ))}
+          <ul className="list-reset" style={{ display: 'grid', gap: 14, marginTop: 18 }}>
+            {resultNames.map((name) => {
+              const isWorst = name === archetypes.antikrist.title;
+
+              return (
+                <li
+                  key={name}
+                  style={{
+                    padding: isWorst ? '16px 18px' : '15px 18px',
+                    borderRadius: 22,
+                    border: isWorst
+                      ? '1px solid rgba(255, 72, 86, 0.58)'
+                      : '1px solid rgba(207, 26, 43, 0.22)',
+                    background: isWorst
+                      ? 'linear-gradient(180deg, rgba(58, 8, 12, 0.98), rgba(16, 3, 4, 0.96))'
+                      : 'linear-gradient(180deg, rgba(25, 6, 8, 0.94), rgba(8, 8, 8, 0.9))',
+                    boxShadow: isWorst
+                      ? '0 12px 34px rgba(120, 0, 10, 0.28), inset 0 1px 0 rgba(255,255,255,0.04)'
+                      : '0 10px 24px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.03)',
+                    fontSize: '1.05rem',
+                    letterSpacing: '0.015em',
+                    fontWeight: isWorst ? 700 : 600,
+                    fontFamily:
+                      'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+                  }}
+                >
+                  {isWorst ? (
+                    <div style={{ display: 'grid', gap: 4 }}>
+                      <span
+                        style={{
+                          fontSize: '0.72rem',
+                          letterSpacing: '0.16em',
+                          textTransform: 'uppercase',
+                          color: '#ff9ca5',
+                          fontWeight: 800,
+                        }}
+                      >
+                        Värsta möjliga
+                      </span>
+                      <span>{name}</span>
+                    </div>
+                  ) : (
+                    name
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </div>
       </section>
