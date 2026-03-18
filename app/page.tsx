@@ -54,7 +54,7 @@ export default function HomePage() {
             priority
             sizes="100vw"
             style={{
-              objectFit: 'contain',
+              objectFit: 'cover',
               objectPosition: 'center top',
             }}
           />
