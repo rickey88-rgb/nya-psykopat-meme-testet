@@ -80,7 +80,7 @@ export default function HomePage() {
               textAlign: 'center',
             }}
           >
-            <div className="section-kicker">Psykopattestet</div>
+            <div className="section-kicker">The Psychopath Test</div>
             <h1
               className="section-title"
               style={{
@@ -88,9 +88,9 @@ export default function HomePage() {
                 marginTop: 8,
               }}
             >
-              Hur mörk
+              How dark
               <br />
-              är du egentligen?
+              are you really?
             </h1>
             <p
               style={{
@@ -100,11 +100,11 @@ export default function HomePage() {
                 fontSize: '1.05rem',
               }}
             >
-              30 brutala frågor. Ett resultat du kanske inte vill se.
+              30 brutal questions. A result you may not want to see.
             </p>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
               <Link className="cta-button" href="/test">
-                Starta testet
+                Start the test
               </Link>
             </div>
           </div>
@@ -113,9 +113,10 @@ export default function HomePage() {
 
       <section id="morkret" className="container" style={{ padding: '28px 20px 24px' }}>
         <div className="glass-panel" style={{ padding: '24px 20px', textAlign: 'center' }}>
-          <div className="section-kicker">Något kallare än samvete</div>
+          <div className="section-kicker">Something colder than conscience</div>
           <div
             style={{
+              marginTop: 10,
               display: 'grid',
               gap: 12,
               fontSize: 'clamp(1.25rem, 4.9vw, 1.8rem)',
@@ -123,52 +124,53 @@ export default function HomePage() {
               letterSpacing: '-0.03em',
             }}
           >
-            <div>Vissa människor bär på något kallare än samvete.</div>
-            <div>Vissa njuter av kontroll.</div>
-            <div>Vissa känner nästan ingenting alls.</div>
+            <div>Some people carry something colder than conscience.</div>
+            <div>Some enjoy control.</div>
+            <div>Some feel almost nothing at all.</div>
           </div>
         </div>
       </section>
 
       <section className="container" style={{ padding: '0 20px 24px' }}>
         <div className="glass-panel" style={{ padding: '24px 20px', textAlign: 'center' }}>
-          <div className="section-kicker">Det här är inte ett gulligt personlighetstest</div>
+          <div className="section-kicker">This is not some cute personality test</div>
           <h2 className="section-title">
-            Det här testet pressar fram den del av dig som helst borde stanna under ytan.
+            This test drags out the part of you that should probably stay beneath the surface.
           </h2>
           <p className="section-body" style={{ marginBottom: 0 }}>
-            Testet rör sig genom manipulation, känslokyla, maktbegär och rå skuggsida. Inte för att
-            förklara bort mörkret — utan för att se hur nära det ligger.
+            The test moves through manipulation, emotional coldness, lust for power, and raw shadow
+            side. Not to explain away the darkness — but to see how close it really is.
           </p>
         </div>
       </section>
 
       <section className="container" style={{ padding: '0 20px 24px' }}>
         <div className="glass-panel" style={{ padding: '24px 20px', textAlign: 'center' }}>
-          <div className="section-kicker">Är detta verkligen för dig?</div>
+          <div className="section-kicker">Is this really for you?</div>
           <div
             style={{
+              marginTop: 10,
               fontSize: 'clamp(1.7rem, 6vw, 2.9rem)',
               lineHeight: 0.98,
               letterSpacing: '-0.05em',
               marginBottom: 16,
             }}
           >
-            De flesta borde nog inte göra det här testet.
+            Most people probably shouldn’t take this test.
             <br />
-            Frågan är om du vågar.
+            The question is whether you dare.
           </div>
           <p className="section-body" style={{ marginBottom: 0 }}>
-            Människor som det här finns på riktigt. Vissa ruttnar bort bakom lås och bom. Andra bär
-            kostym och får hörnkontor
+            People like this exist in real life. Some rot away behind bars. Others wear suits and
+            get corner offices
           </p>
         </div>
       </section>
 
       <section className="container" style={{ padding: '0 20px 24px' }}>
         <div className="glass-panel" style={{ padding: '24px 20px', textAlign: 'center' }}>
-          <div className="section-kicker">Om du går vidare</div>
-          <h2 className="section-title">Du kan möta resultat som de här</h2>
+          <div className="section-kicker">If you go through with it</div>
+          <h2 className="section-title">You may face results like these</h2>
           <ul className="list-reset" style={{ display: 'grid', gap: 14, marginTop: 18 }}>
             {resultNames.map((name) => {
               const isWorst = name === archetypes.antikrist.title;
@@ -222,19 +224,19 @@ export default function HomePage() {
 
       <section className="container" style={{ padding: '0 20px 72px' }}>
         <div className="glass-panel" style={{ padding: '28px 20px 24px', textAlign: 'center' }}>
-          <div className="section-kicker">Sista steget</div>
+          <div className="section-kicker">Final step</div>
           <h2 className="section-title" style={{ marginBottom: 10 }}>
-            Vågar du göra testet?
+            Do you dare take the test?
           </h2>
           <p className="section-body" style={{ margin: '0 auto 20px', maxWidth: 560 }}>
-            Det finns bara ett sätt att se vad som finns där inne.
+            There’s only one way to see what’s inside.
           </p>
           <div style={{ display: 'grid', gap: 12, maxWidth: 420, margin: '0 auto' }}>
             <Link className="cta-button" href="/test">
-              Starta testet
+              Start the test
             </Link>
             <div style={{ color: '#b99191', fontSize: '0.94rem' }}>
-              30 frågor · cirka 3 minuter · Direkt analys
+              30 questions · about 3 minutes · Instant analysis
             </div>
           </div>
         </div>

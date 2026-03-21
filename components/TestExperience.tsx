@@ -9,11 +9,11 @@ type Phase = 'warning' | 'questions' | 'analysis' | 'paywall' | 'result';
 const pulseCheckpoints = new Set([6, 12, 18, 24, 30]);
 
 function StepLabel({ index }: { index: number }) {
-  if (index < 6) return <span>Första lagret</span>;
-  if (index < 12) return <span>Djupare nu</span>;
-  if (index < 18) return <span>Det här börjar bli fel</span>;
-  if (index < 24) return <span>Det borde nog ha stoppat här</span>;
-  return <span>Sista nivån</span>;
+  if (index < 6) return <span>The first layer</span>;
+  if (index < 12) return <span>Deeper now</span>;
+  if (index < 18) return <span>This is starting to feel wrong</span>;
+  if (index < 24) return <span>This probably should have stopped here</span>;
+  return <span>Final level</span>;
 }
 
 function OptionButton({
@@ -61,7 +61,7 @@ function QuestionCard({
     <section className="glass-panel" style={{ padding: '22px 18px 20px' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12, marginBottom: 18 }}>
         <div className="section-kicker"><StepLabel index={index} /></div>
-        <div style={{ color: '#ff8c97', fontSize: '0.92rem', fontWeight: 700 }}>Fråga {index + 1} / {questions.length}</div>
+        <div style={{ color: '#ff8c97', fontSize: '0.92rem', fontWeight: 700 }}>Question {index + 1} / {questions.length}</div>
       </div>
 
       <h1 style={{ fontSize: 'clamp(1.75rem, 6.5vw, 2.4rem)', lineHeight: 1.02, letterSpacing: '-0.04em', margin: '0 0 22px' }}>
@@ -107,7 +107,7 @@ function AnalysisPanel({ done, stepIndex }: { done: boolean; stepIndex: number }
           }}
         />
       </div>
-      <div className="section-kicker" style={{ textAlign: 'center' }}>Analys pågår</div>
+      <div className="section-kicker" style={{ textAlign: 'center' }}>Analysis in progress</div>
       <div style={{ textAlign: 'center', fontSize: 'clamp(1.85rem, 7vw, 3rem)', lineHeight: 1.02, letterSpacing: '-0.05em' }}>
         {analysisSteps[Math.min(stepIndex, analysisSteps.length - 1)]}
       </div>
@@ -135,26 +135,26 @@ function AnalysisPanel({ done, stepIndex }: { done: boolean; stepIndex: number }
 function PaywallPanel({ onUnlock }: { onUnlock: () => void }) {
   return (
     <section className="glass-panel" style={{ padding: '28px 20px 24px', textAlign: 'center' }}>
-      <div className="section-kicker">Mörkerprofilen väntar</div>
+      <div className="section-kicker">Your dark profile is waiting</div>
       <div style={{ fontSize: 'clamp(2rem, 7.8vw, 3.2rem)', lineHeight: 0.98, letterSpacing: '-0.05em', margin: '12px 0 14px' }}>
-        Vi har sett tillräckligt.
+        We have seen enough.
         <br />
-        Vi vet något om dig nu.
+        We know something about you now.
         <br />
-        Frågan är om du vill veta det själv.
+        The question is whether you want to know it too.
       </div>
       <p style={{ color: '#d8bbbb', lineHeight: 1.65, margin: '0 auto 18px', maxWidth: 560 }}>
-        Din mörkerprofil är klar. Lås upp ditt fulla resultat och se vad testet såg i dig.
+        Your dark profile is ready. Unlock your full result and see what the test saw in you.
       </p>
       <div style={{ display: 'grid', gap: 12, maxWidth: 420, margin: '0 auto 18px' }}>
         <div style={{ padding: '14px 16px', borderRadius: 18, border: '1px solid rgba(204, 31, 47, 0.22)', background: 'rgba(18, 7, 8, 0.84)' }}>
-          Resultatnamn · brutal domtext · fyra mörka sektioner
+          Result name · brutal verdict text · four dark sections
         </div>
       </div>
       <button className="cta-button" style={{ width: '100%', maxWidth: 420 }} onClick={onUnlock}>
-        Lås upp mitt resultat — 39 kr
+        Unlock my result — 39 SEK
       </button>
-      <div style={{ marginTop: 12, color: '#9f7f7f', fontSize: '0.88rem' }}>Demo-läge: byt denna knapp mot Stripe när du vill.</div>
+      <div style={{ marginTop: 12, color: '#9f7f7f', fontSize: '0.88rem' }}>Demo mode: swap this button for Stripe whenever you want.</div>
     </section>
   );
 }
@@ -165,7 +165,7 @@ function ResultCard({ answers }: { answers: AnswerMap }) {
 
   return (
     <section className="glass-panel" style={{ padding: '28px 20px 26px' }}>
-      <div className="section-kicker">Ditt resultat</div>
+      <div className="section-kicker">Your result</div>
       <div style={{ marginTop: 10, marginBottom: 20 }}>
         <div style={{ fontSize: 'clamp(2.2rem, 9vw, 4rem)', lineHeight: 0.95, letterSpacing: '-0.06em', textTransform: 'uppercase' }}>
           {profile.title}
@@ -174,7 +174,7 @@ function ResultCard({ answers }: { answers: AnswerMap }) {
       </div>
 
       <div style={{ marginBottom: 24 }}>
-        <div style={{ color: '#bda0a0', fontSize: '0.88rem', marginBottom: 10, textTransform: 'uppercase', letterSpacing: '0.16em' }}>Mörkernivå</div>
+        <div style={{ color: '#bda0a0', fontSize: '0.88rem', marginBottom: 10, textTransform: 'uppercase', letterSpacing: '0.16em' }}>Darkness level</div>
         <div style={{ position: 'relative', height: 26, borderRadius: 999, overflow: 'hidden', background: 'rgba(25, 7, 9, 0.86)', border: '1px solid rgba(209, 34, 51, 0.2)' }}>
           <div
             style={{
@@ -195,10 +195,10 @@ function ResultCard({ answers }: { answers: AnswerMap }) {
 
       <div style={{ display: 'grid', gap: 14, marginTop: 22 }}>
         {[
-          ['Din mörkaste sida', profile.darkest],
-          ['Vad andra missar hos dig', profile.hidden],
-          ['Det som gör dig farligare än de flesta', profile.danger],
-          ['Om sanningen om dig kom ut', profile.truth],
+          ['Your darkest side', profile.darkest],
+          ['What others miss about you', profile.hidden],
+          ['What makes you more dangerous than most', profile.danger],
+          ['If the truth about you came out', profile.truth],
         ].map(([title, body]) => (
           <div key={title} style={{ padding: '16px 16px 18px', borderRadius: 18, border: '1px solid rgba(201, 28, 46, 0.22)', background: 'linear-gradient(180deg, rgba(24, 6, 8, 0.94), rgba(8, 8, 8, 0.92))' }}>
             <div style={{ color: '#ff8993', fontSize: '0.84rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.14em', marginBottom: 8 }}>{title}</div>
@@ -283,31 +283,31 @@ export function TestExperience() {
       <div className="container" style={{ maxWidth: 720 }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, marginBottom: 16 }}>
           <div>
-            <div className="section-kicker">Psykopattestet</div>
-            <div style={{ color: '#e8d1d1', marginTop: 4 }}>Mörkt meme-test · mobil först</div>
+            <div className="section-kicker">Psychopath Test</div>
+            <div style={{ color: '#e8d1d1', marginTop: 4 }}>Dark meme test · mobile first</div>
           </div>
           {phase !== 'warning' && phase !== 'result' && (
             <button className="ghost-button" style={{ minHeight: 48, padding: '12px 16px' }} onClick={restart}>
-              Börja om
+              Restart
             </button>
           )}
         </div>
 
         {phase === 'warning' && (
           <section className="glass-panel" style={{ padding: '30px 20px 24px', textAlign: 'center' }}>
-            <div className="section-kicker">Sista chansen att backa</div>
+            <div className="section-kicker">Last chance to back out</div>
             <div style={{ fontSize: 'clamp(2rem, 7vw, 3rem)', lineHeight: 0.98, letterSpacing: '-0.05em', margin: '12px 0 16px' }}>
-              Varning.
+              Warning.
               <br />
-              Det här testet är mörkt av en anledning.
+              This test is dark for a reason.
             </div>
             <p style={{ color: '#dbc3c3', lineHeight: 1.72, margin: '0 auto 20px', maxWidth: 560 }}>
-              Vissa frågor är råa. Vissa svar kommer kännas fel. Vissa resultat känns värre än man tror.
+              Some questions are raw. Some answers will feel wrong. Some results feel worse than you expect.
               <br />
-              Fortsätt bara om du verkligen vill veta.
+              Continue only if you really want to know.
             </p>
             <button className="cta-button" style={{ width: '100%' }} onClick={() => setPhase('questions')}>
-              Starta testet
+              Start the test
             </button>
           </section>
         )}
@@ -316,7 +316,7 @@ export function TestExperience() {
           <>
             <div style={{ marginBottom: 16 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8, color: '#a88787', fontSize: '0.92rem' }}>
-                <span>Dina svar registreras</span>
+                <span>Your answers are being recorded</span>
                 <span>{Math.round(progress)}%</span>
               </div>
               <div style={{ height: 10, borderRadius: 999, overflow: 'hidden', background: 'rgba(23, 6, 8, 0.88)', border: '1px solid rgba(207, 26, 43, 0.16)' }}>
@@ -333,7 +333,7 @@ export function TestExperience() {
           <>
             <ResultCard answers={answers} />
             <div style={{ display: 'grid', gap: 12, marginTop: 18 }}>
-              <button className="ghost-button" onClick={restart}>Kör testet igen</button>
+              <button className="ghost-button" onClick={restart}>Take the test again</button>
             </div>
           </>
         )}
