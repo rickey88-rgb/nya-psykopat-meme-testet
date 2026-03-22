@@ -47,7 +47,7 @@ export default function HomePage() {
           }}
         >
           <Image
-            src="/hero-demon-v2.png"
+            src="/hero-psychopath-v1.png"
             alt=""
             fill
             priority
