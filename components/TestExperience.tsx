@@ -190,7 +190,7 @@ function ResultCard({ answers }: { answers: AnswerMap }) {
       </div>
 
       <div style={{ marginBottom: 24 }}>
-        <div style={{ color: '#bda0a0', fontSize: '0.88rem', marginBottom: 10, textTransform: 'uppercase', letterSpacing: '0.16em' }}>Darkness level</div>
+        <div style={{ color: '#bda0a0', fontSize: '0.88rem', marginBottom: 10, textTransform: 'uppercase', letterSpacing: '0.16em' }}>Psychopathy Score</div>
         <div style={{ position: 'relative', height: 26, borderRadius: 999, overflow: 'hidden', background: 'rgba(25, 7, 9, 0.86)', border: '1px solid rgba(209, 34, 51, 0.2)' }}>
           <div
             style={{

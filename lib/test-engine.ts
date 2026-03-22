@@ -70,13 +70,21 @@ export function computeResult(questions: Question[], answers: AnswerMap): Comput
   const darknessRatio = maxPossibleDarkness > 0 ? totalDarkness / maxPossibleDarkness : 0;
   const aboveAverageCount = Object.values(normalizedScores).filter((value) => value >= 0.62).length;
 
-  let resultKey: ResultKey = dominant;
+  let resultKey: ResultKey;
 
-  // Full pott eller nästan full pott = alltid Antikrist
-  if (darknessRatio >= 0.95) {
-    resultKey = 'antikrist';
-  } else if (darknessRatio >= 0.84 && aboveAverageCount >= 4) {
-    resultKey = 'antikrist';
+  // Huvudresultatet ska nu styras av severity, inte av gammal archetype-logik.
+  if (darknessRatio >= 0.92 || (darknessRatio >= 0.82 && aboveAverageCount >= 4)) {
+    resultKey = 'antikrist'; // Apex Psychopathy Profile
+  } else if (darknessRatio >= 0.68) {
+    resultKey = 'denIhalige'; // Dark Triad Profile
+  } else if (darknessRatio >= 0.52) {
+    resultKey = 'asataren'; // Manipulative Profile
+  } else if (darknessRatio >= 0.36) {
+    resultKey = 'skuggregissoren'; // Emotionally Cold
+  } else if (darknessRatio >= 0.2) {
+    resultKey = 'slaktaren'; // Mild Red Flags
+  } else {
+    resultKey = 'sadisten'; // Within Normal Range
   }
 
   return {

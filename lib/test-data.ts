@@ -30,7 +30,7 @@ export type ResultProfile = {
 };
 
 const w = (
-  darkness: number,
+  _darkness: number,
   sadisten: number,
   slaktaren: number,
   skuggregissoren: number,
@@ -378,10 +378,10 @@ export const questions: Question[] = [
 ];
 
 export const analysisSteps = [
-  'We’re going through your answers...',
-  'We’re seeing a pattern.',
-  'This probably should have stayed beneath the surface.',
-  'We’ve seen enough.',
+  'Reviewing your responses...',
+  'Mapping your profile...',
+  'Measuring pattern and severity...',
+  'Finalizing your result...',
 ];
 
 export const archetypes: Record<ResultKey, ResultProfile> = {
