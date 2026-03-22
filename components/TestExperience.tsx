@@ -135,26 +135,42 @@ function AnalysisPanel({ done, stepIndex }: { done: boolean; stepIndex: number }
 function PaywallPanel({ onUnlock }: { onUnlock: () => void }) {
   return (
     <section className="glass-panel" style={{ padding: '28px 20px 24px', textAlign: 'center' }}>
-      <div className="section-kicker">Your dark profile is waiting</div>
-      <div style={{ fontSize: 'clamp(2rem, 7.8vw, 3.2rem)', lineHeight: 0.98, letterSpacing: '-0.05em', margin: '12px 0 14px' }}>
-        We have seen enough.
+      <div className="section-kicker">Your result is ready</div>
+      <div
+        style={{
+          fontSize: 'clamp(2rem, 7.8vw, 3.2rem)',
+          lineHeight: 0.98,
+          letterSpacing: '-0.05em',
+          margin: '12px 0 14px',
+        }}
+      >
+        The test has
         <br />
-        We know something about you now.
-        <br />
-        The question is whether you want to know it too.
+        completed your profile.
       </div>
-      <p style={{ color: '#d8bbbb', lineHeight: 1.65, margin: '0 auto 18px', maxWidth: 560 }}>
-        Your dark profile is ready. Unlock your full result and see what the test saw in you.
+      <p style={{ color: '#c8d1de', lineHeight: 1.65, margin: '0 auto 18px', maxWidth: 560 }}>
+        Unlock your full result to see how your answers scored across psychopathy, emotional
+        coldness, manipulation, and control.
       </p>
       <div style={{ display: 'grid', gap: 12, maxWidth: 420, margin: '0 auto 18px' }}>
-        <div style={{ padding: '14px 16px', borderRadius: 18, border: '1px solid rgba(204, 31, 47, 0.22)', background: 'rgba(18, 7, 8, 0.84)' }}>
-          Result name · brutal verdict text · four dark sections
+        <div
+          style={{
+            padding: '14px 16px',
+            borderRadius: 18,
+            border: '1px solid rgba(112, 129, 156, 0.18)',
+            background: 'rgba(8, 13, 21, 0.84)',
+            color: '#d9e1ec',
+          }}
+        >
+          Result level · full written analysis · four detailed sections
         </div>
       </div>
       <button className="cta-button" style={{ width: '100%', maxWidth: 420 }} onClick={onUnlock}>
-        Unlock my result — 39 SEK
+        Unlock My Result — $4.99
       </button>
-      <div style={{ marginTop: 12, color: '#9f7f7f', fontSize: '0.88rem' }}>Demo mode: swap this button for Stripe whenever you want.</div>
+      <div style={{ marginTop: 12, color: '#8fa0b6', fontSize: '0.88rem' }}>
+        Demo mode: replace this button with Stripe whenever you want.
+      </div>
     </section>
   );
 }
@@ -284,7 +300,7 @@ export function TestExperience() {
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, marginBottom: 16 }}>
           <div>
             <div className="section-kicker">Psychopath Test</div>
-            <div style={{ color: '#e8d1d1', marginTop: 4 }}>Dark meme test · mobile first</div>
+            <div style={{ color: '#e8d1d1', marginTop: 4 }}>Inspired by research</div>
           </div>
           {phase !== 'warning' && phase !== 'result' && (
             <button className="ghost-button" style={{ minHeight: 48, padding: '12px 16px' }} onClick={restart}>
@@ -293,24 +309,26 @@ export function TestExperience() {
           )}
         </div>
 
-        {phase === 'warning' && (
-          <section className="glass-panel" style={{ padding: '30px 20px 24px', textAlign: 'center' }}>
-            <div className="section-kicker">Last chance to back out</div>
-            <div style={{ fontSize: 'clamp(2rem, 7vw, 3rem)', lineHeight: 0.98, letterSpacing: '-0.05em', margin: '12px 0 16px' }}>
-              Warning.
-              <br />
-              This test is dark for a reason.
-            </div>
-            <p style={{ color: '#dbc3c3', lineHeight: 1.72, margin: '0 auto 20px', maxWidth: 560 }}>
-              Some questions are raw. Some answers will feel wrong. Some results feel worse than you expect.
-              <br />
-              Continue only if you really want to know.
-            </p>
-            <button className="cta-button" style={{ width: '100%' }} onClick={() => setPhase('questions')}>
-              Start the test
-            </button>
-          </section>
-        )}
+       {phase === 'warning' && (
+  <section className="glass-panel" style={{ padding: '30px 20px 24px', textAlign: 'center' }}>
+    <div className="section-kicker">Before you begin</div>
+    <div style={{ fontSize: 'clamp(2rem, 7vw, 3rem)', lineHeight: 0.98, letterSpacing: '-0.05em', margin: '12px 0 16px' }}>
+      This assessment is
+      <br />
+      intentionally uncomfortable.
+    </div>
+    <p style={{ color: '#c8d1de', lineHeight: 1.72, margin: '0 auto 20px', maxWidth: 560 }}>
+      Some questions are direct. Others are designed to reveal patterns in manipulation, emotional coldness,
+      and psychopathy-related behavior.
+      <br />
+      <br />
+      Continue only if you want an honest result.
+    </p>
+    <button className="cta-button" style={{ width: '100%' }} onClick={() => setPhase('questions')}>
+      Start the Test
+    </button>
+  </section>
+)}
 
         {phase === 'questions' && currentQuestion && (
           <>
