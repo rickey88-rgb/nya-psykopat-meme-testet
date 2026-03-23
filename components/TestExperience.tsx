@@ -618,15 +618,15 @@ export function TestExperience() {
         margin: '12px 0 16px',
       }}
     >
-      One last thing.
-    </div>
-    <p style={{ color: '#c8d1de', lineHeight: 1.72, margin: '0 auto 20px', maxWidth: 560 }}>
-      Before we finalize your result, there&apos;s one final visual response.
-    </p>
-    <button className="cta-button" style={{ width: '100%' }} onClick={() => setPhase('questions')}>
-      Continue
-    </button>
-  </section>
+     One last thing.
+</div>
+<p style={{ color: '#c8d1de', lineHeight: 1.72, margin: '0 auto 20px', maxWidth: 560 }}>
+  Inspired by the Rorschach method, this final visual prompt may reveal more than a direct question ever could.
+</p>
+<button className="cta-button" style={{ width: '100%' }} onClick={() => setPhase('questions')}>
+  Continue
+</button>
+</section>
 )}
 
         {phase === 'questions' && currentQuestion && (
