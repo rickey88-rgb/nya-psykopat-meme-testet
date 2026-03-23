@@ -650,11 +650,7 @@ export function TestExperience() {
                 />
               </div>
             </div>
-           {currentQuestion.id === 'q31' ? (
-  <InkblotQuestionCard question={currentQuestion} index={questionIndex} onAnswer={handleAnswer} />
-) : (
-  <QuestionCard question={currentQuestion} index={questionIndex} onAnswer={handleAnswer} />
-)}
+          <QuestionCard question={currentQuestion} index={questionIndex} onAnswer={handleAnswer} />
           </>
         )}
 
