@@ -450,6 +450,13 @@ export function TestExperience() {
   }, [phase]);
 
   useEffect(() => {
+  if (typeof window === 'undefined') return;
+
+  const img = new window.Image();
+  img.src = '/inkblot-test.png';
+}, []);
+
+  useEffect(() => {
     if (typeof window === 'undefined') return;
 
     const params = new URLSearchParams(window.location.search);
