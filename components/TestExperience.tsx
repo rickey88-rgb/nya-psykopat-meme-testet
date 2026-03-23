@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { analysisSteps, questions, type Question } from '@/lib/test-data';
 import { computeResult, type AnswerMap } from '@/lib/test-engine';
 
-type Phase = 'warning' | 'questions' | 'analysis' | 'paywall' | 'result';
+type Phase = 'warning' | 'questions' | 'transition' | 'analysis' | 'paywall' | 'result';
 
 const pulseCheckpoints = new Set([6, 12, 18, 24, 30]);
 const ANSWERS_STORAGE_KEY = 'psychopath_test_answers';
@@ -96,6 +96,91 @@ function QuestionCard({
             option={option}
             onClick={() => onAnswer(option.id)}
             isForced={question.type === 'forced'}
+          />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function InkblotQuestionCard({
+  question,
+  index,
+  onAnswer,
+}: {
+  question: Question;
+  index: number;
+  onAnswer: (optionId: string) => void;
+}) {
+  return (
+    <section className="glass-panel" style={{ padding: '22px 18px 20px' }}>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          gap: 12,
+          marginBottom: 18,
+        }}
+      >
+        <div className="section-kicker">Final question</div>
+        <div style={{ color: '#ff8c97', fontSize: '0.92rem', fontWeight: 700 }}>
+          Question {index + 1} / {questions.length}
+        </div>
+      </div>
+
+      <div
+        style={{
+          marginBottom: 18,
+          color: '#c8d1de',
+          lineHeight: 1.65,
+          fontSize: '0.98rem',
+        }}
+      >
+        Study the image carefully before answering.
+      </div>
+
+      <div
+        style={{
+          marginBottom: 22,
+          borderRadius: 24,
+          overflow: 'hidden',
+          border: '1px solid rgba(191, 28, 44, 0.22)',
+          background: 'linear-gradient(180deg, rgba(16, 16, 16, 0.96), rgba(6, 6, 6, 0.96))',
+          padding: 18,
+        }}
+      >
+        <img
+          src="/inkblot-test.png"
+          alt="Inkblot"
+          style={{
+            display: 'block',
+            width: '100%',
+            height: 'auto',
+            maxWidth: 560,
+            margin: '0 auto',
+          }}
+        />
+      </div>
+
+      <h1
+        style={{
+          fontSize: 'clamp(1.75rem, 6.5vw, 2.4rem)',
+          lineHeight: 1.02,
+          letterSpacing: '-0.04em',
+          margin: '0 0 22px',
+        }}
+      >
+        {question.prompt}
+      </h1>
+
+      <div style={{ display: 'grid', gap: 12, marginTop: 28 }}>
+        {question.options.map((option) => (
+          <OptionButton
+            key={option.id}
+            option={option}
+            onClick={() => onAnswer(option.id)}
+            isForced
           />
         ))}
       </div>
@@ -218,7 +303,7 @@ function PaywallPanel({ onUnlock }: { onUnlock: () => void }) {
         </div>
       </div>
       <button className="cta-button" style={{ width: '100%', maxWidth: 420 }} onClick={onUnlock}>
-        Unlock My Full Result — $4.99
+        Unlock My Full Result  $4.99
       </button>
       <div style={{ marginTop: 12, color: '#8fa0b6', fontSize: '0.88rem' }}>
         One-time payment only. No subscription. Instant access.
@@ -405,6 +490,12 @@ export function TestExperience() {
       setPulseToken(Date.now());
     }
 
+    if (currentQuestion.id === 'q30') {
+  setQuestionIndex(nextIndex);
+  setPhase('transition');
+  return;
+}
+
     if (nextIndex >= questions.length) {
       setQuestionIndex(nextIndex);
       setAnalysisStep(0);
@@ -502,6 +593,28 @@ export function TestExperience() {
           </section>
         )}
 
+        {phase === 'transition' && (
+  <section className="glass-panel" style={{ padding: '30px 20px 24px', textAlign: 'center' }}>
+    <div className="section-kicker">Final step</div>
+    <div
+      style={{
+        fontSize: 'clamp(2rem, 7vw, 3rem)',
+        lineHeight: 0.98,
+        letterSpacing: '-0.05em',
+        margin: '12px 0 16px',
+      }}
+    >
+      One last thing.
+    </div>
+    <p style={{ color: '#c8d1de', lineHeight: 1.72, margin: '0 auto 20px', maxWidth: 560 }}>
+      Before we finalize your result, there&apos;s one final visual response.
+    </p>
+    <button className="cta-button" style={{ width: '100%' }} onClick={() => setPhase('questions')}>
+      Continue
+    </button>
+  </section>
+)}
+
         {phase === 'questions' && currentQuestion && (
           <>
             <div style={{ marginBottom: 16 }}>
@@ -537,7 +650,11 @@ export function TestExperience() {
                 />
               </div>
             </div>
-            <QuestionCard question={currentQuestion} index={questionIndex} onAnswer={handleAnswer} />
+           {currentQuestion.id === 'q31' ? (
+  <InkblotQuestionCard question={currentQuestion} index={questionIndex} onAnswer={handleAnswer} />
+) : (
+  <QuestionCard question={currentQuestion} index={questionIndex} onAnswer={handleAnswer} />
+)}
           </>
         )}
 
