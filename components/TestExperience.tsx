@@ -144,13 +144,14 @@ function PaywallPanel({ onUnlock }: { onUnlock: () => void }) {
           margin: '12px 0 14px',
         }}
       >
-        The test has
+        Something in your
         <br />
-        completed your profile.
+        answers stood out.
       </div>
       <p style={{ color: '#c8d1de', lineHeight: 1.65, margin: '0 auto 18px', maxWidth: 560 }}>
-        Unlock your full result to see how your answers scored across psychopathy, emotional
-        coldness, manipulation, and control.
+        A few responses shifted your profile immediately. Others revealed a pattern that becomes
+        harder to dismiss the closer you look. Unlock your full result to see what the test
+        detected, which traits scored highest, and what your overall profile really points to.
       </p>
       <div style={{ display: 'grid', gap: 12, maxWidth: 420, margin: '0 auto 18px' }}>
         <div
@@ -162,14 +163,14 @@ function PaywallPanel({ onUnlock }: { onUnlock: () => void }) {
             color: '#d9e1ec',
           }}
         >
-          Result level · full written analysis · four detailed sections
+          Full verdict · top traits revealed · four-part analysis
         </div>
       </div>
       <button className="cta-button" style={{ width: '100%', maxWidth: 420 }} onClick={onUnlock}>
-        Unlock My Result — $4.99
+        Unlock My Full Result — $4.99
       </button>
       <div style={{ marginTop: 12, color: '#8fa0b6', fontSize: '0.88rem' }}>
-        Demo mode: replace this button with Stripe whenever you want.
+        One-time payment only. No subscription. Instant access.
       </div>
     </section>
   );
