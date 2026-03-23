@@ -361,9 +361,8 @@ export default function HomePage() {
     </div>
 
     <div style={{ fontSize: '0.9rem', color: '#6f8098', lineHeight: 1.6 }}>
-      Support: support@officialpsychopathtest.com
-      <br />
-      Official Psychopath Test is for entertainment and self-reflection only. It does not provide
+     
+      Official Psychopath Test is for self-reflection only. It does not provide
       a clinical diagnosis.
     </div>
   </div>
