@@ -360,14 +360,15 @@ export default function HomePage() {
   }
 
   [data-page="psychopath-home"] .hero-content {
-    transform: translateY(-145px);
+    transform: translateY(-110px);
   }
 
-  [data-page="psychopath-home"] .hero-figure {
-    bottom: clamp(130px, 13vh, 200px) !important;
-    width: min(80vw, 1020px) !important;
-    height: min(80svh, 800px) !important;
-  }
+ [data-page="psychopath-home"] .hero-content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  transform: translateY(-95px);
+}
 }
           `,
         }}
