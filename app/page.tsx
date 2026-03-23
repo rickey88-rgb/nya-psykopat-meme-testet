@@ -342,7 +342,7 @@ export default function HomePage() {
   [data-page="psychopath-home"] .hero-figure {
     left: 50% !important;
     transform: translateX(-50%) !important;
-    bottom: clamp(120px, 12vh, 190px) !important;
+   bottom: clamp(155px, 15vh, 240px) !important;
     width: min(84vw, 980px) !important;
     height: min(78svh, 760px) !important;
     filter: drop-shadow(0 38px 110px rgba(0, 0, 0, 0.98)) !important;
@@ -360,14 +360,14 @@ export default function HomePage() {
   }
 
   [data-page="psychopath-home"] .hero-content {
-    transform: translateY(-110px);
+    transform: translateY(-30px);
   }
 
  [data-page="psychopath-home"] .hero-content {
   display: flex;
   justify-content: center;
   width: 100%;
-  transform: translateY(-95px);
+  transform: translateY(-30px);
 }
 }
           `,
