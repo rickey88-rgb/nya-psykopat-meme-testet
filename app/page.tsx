@@ -14,6 +14,7 @@ export default function HomePage() {
   return (
     <main className="page-shell" style={{ textAlign: 'center' }}>
       <section
+        className="hero-section"
         style={{
           minHeight: '100svh',
           display: 'grid',
@@ -24,6 +25,7 @@ export default function HomePage() {
         }}
       >
         <div
+          className="hero-atmosphere"
           style={{
             position: 'absolute',
             inset: 0,
@@ -33,6 +35,7 @@ export default function HomePage() {
         />
 
         <div
+          className="hero-figure"
           style={{
             position: 'absolute',
             left: '50%',
@@ -47,11 +50,12 @@ export default function HomePage() {
           }}
         >
           <Image
+            className="hero-image"
             src="/hero-psychopath-v1.png"
             alt=""
             fill
             priority
-            sizes="100vw"
+            sizes="(min-width: 1024px) 90vw, 100vw"
             style={{
               objectFit: 'cover',
               objectPosition: 'center top',
@@ -60,6 +64,7 @@ export default function HomePage() {
         </div>
 
         <div
+          className="hero-fade"
           style={{
             position: 'absolute',
             inset: 0,
@@ -70,9 +75,9 @@ export default function HomePage() {
           }}
         />
 
-        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+        <div className="container hero-content" style={{ position: 'relative', zIndex: 2 }}>
           <div
-            className="glass-panel"
+            className="glass-panel hero-card"
             style={{
               padding: '26px 22px 24px',
               maxWidth: 560,
@@ -114,7 +119,14 @@ export default function HomePage() {
               projective perception. Explore manipulation, emotional coldness,
               conscience, and control.
             </p>
-            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
+            <div
+              style={{
+                display: 'flex',
+                gap: 12,
+                flexWrap: 'wrap',
+                justifyContent: 'center',
+              }}
+            >
               <Link className="cta-button" href="/test">
                 Start the Test
               </Link>
@@ -312,6 +324,58 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <style jsx>{`
+        @media (min-width: 1024px) {
+          .hero-section {
+            min-height: max(860px, 100svh) !important;
+            padding-top: 40px !important;
+            padding-bottom: 56px !important;
+          }
+
+          .hero-content {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+          }
+
+          .hero-card {
+            max-width: 620px !important;
+            margin: 0 auto !important;
+            padding: 30px 28px 28px !important;
+          }
+
+          .hero-figure {
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            bottom: clamp(185px, 16vh, 260px) !important;
+            width: min(90vw, 1120px) !important;
+            height: min(92svh, 920px) !important;
+            filter: drop-shadow(0 38px 110px rgba(0, 0, 0, 0.98)) !important;
+          }
+
+          .hero-image {
+            object-fit: contain !important;
+            object-position: center bottom !important;
+          }
+        }
+
+        @media (min-width: 1280px) {
+          .hero-section {
+            min-height: 920px !important;
+          }
+
+          .hero-figure {
+            bottom: 190px !important;
+            width: min(88vw, 1160px) !important;
+            height: min(94svh, 960px) !important;
+          }
+
+          .hero-card {
+            max-width: 640px !important;
+          }
+        }
+      `}</style>
     </main>
   );
 }
