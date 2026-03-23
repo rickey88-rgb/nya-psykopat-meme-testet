@@ -320,54 +320,55 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{
           __html: `
             @media (min-width: 1024px) {
-              [data-page="psychopath-home"] .hero-section {
-                min-height: max(860px, 100svh) !important;
-                padding-top: 40px !important;
-                padding-bottom: 56px !important;
-              }
+  [data-page="psychopath-home"] .hero-section {
+    min-height: 100svh !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
 
-              [data-page="psychopath-home"] .hero-content {
-                display: flex;
-                justify-content: center;
-                width: 100%;
-              }
+  [data-page="psychopath-home"] .hero-content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    transform: translateY(-130px);
+  }
 
-              [data-page="psychopath-home"] .hero-card {
-                max-width: 620px !important;
-                margin: 0 auto !important;
-                padding: 30px 28px 28px !important;
-              }
+  [data-page="psychopath-home"] .hero-card {
+    max-width: 620px !important;
+    margin: 0 auto !important;
+    padding: 30px 28px 28px !important;
+  }
 
-              [data-page="psychopath-home"] .hero-figure {
-                left: 50% !important;
-                transform: translateX(-50%) !important;
-                bottom: clamp(185px, 16vh, 260px) !important;
-                width: min(90vw, 1120px) !important;
-                height: min(92svh, 920px) !important;
-                filter: drop-shadow(0 38px 110px rgba(0, 0, 0, 0.98)) !important;
-              }
+  [data-page="psychopath-home"] .hero-figure {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    bottom: clamp(120px, 12vh, 190px) !important;
+    width: min(84vw, 980px) !important;
+    height: min(78svh, 760px) !important;
+    filter: drop-shadow(0 38px 110px rgba(0, 0, 0, 0.98)) !important;
+  }
 
-              [data-page="psychopath-home"] .hero-image {
-                object-fit: contain !important;
-                object-position: center bottom !important;
-              }
-            }
+  [data-page="psychopath-home"] .hero-image {
+    object-fit: contain !important;
+    object-position: center top !important;
+  }
+}
 
-            @media (min-width: 1280px) {
-              [data-page="psychopath-home"] .hero-section {
-                min-height: 920px !important;
-              }
+@media (min-width: 1280px) {
+  [data-page="psychopath-home"] .hero-section {
+    min-height: 100svh !important;
+  }
 
-              [data-page="psychopath-home"] .hero-figure {
-                bottom: 190px !important;
-                width: min(88vw, 1160px) !important;
-                height: min(94svh, 960px) !important;
-              }
+  [data-page="psychopath-home"] .hero-content {
+    transform: translateY(-145px);
+  }
 
-              [data-page="psychopath-home"] .hero-card {
-                max-width: 640px !important;
-              }
-            }
+  [data-page="psychopath-home"] .hero-figure {
+    bottom: clamp(130px, 13vh, 200px) !important;
+    width: min(80vw, 1020px) !important;
+    height: min(80svh, 800px) !important;
+  }
+}
           `,
         }}
       />
