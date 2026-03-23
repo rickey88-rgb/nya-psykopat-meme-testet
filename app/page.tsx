@@ -316,6 +316,59 @@ export default function HomePage() {
         </div>
       </section>
 
+      <footer
+  style={{
+    padding: '0 20px 34px',
+  }}
+>
+  <div
+    className="container"
+    style={{
+      maxWidth: 720,
+      margin: '0 auto',
+      borderTop: '1px solid rgba(112, 129, 156, 0.16)',
+      paddingTop: 18,
+      display: 'grid',
+      gap: 14,
+      textAlign: 'center',
+    }}
+  >
+    <div
+      style={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        gap: 14,
+        fontSize: '0.95rem',
+        color: '#93a1b6',
+      }}
+    >
+      <Link href="/privacy" style={{ color: '#93a1b6', textDecoration: 'none' }}>
+        Privacy Policy
+      </Link>
+      <Link href="/terms" style={{ color: '#93a1b6', textDecoration: 'none' }}>
+        Terms
+      </Link>
+      <Link href="/refunds" style={{ color: '#93a1b6', textDecoration: 'none' }}>
+        Refund Policy
+      </Link>
+      <a
+        href="mailto:support@officialpsychopathtest.com"
+        style={{ color: '#93a1b6', textDecoration: 'none' }}
+      >
+        Contact
+      </a>
+    </div>
+
+    <div style={{ fontSize: '0.9rem', color: '#6f8098', lineHeight: 1.6 }}>
+      Support: support@officialpsychopathtest.com
+      <br />
+      Official Psychopath Test is for entertainment and self-reflection only. It does not provide
+      a clinical diagnosis.
+    </div>
+  </div>
+</footer>
+
       <style
         dangerouslySetInnerHTML={{
           __html: `
