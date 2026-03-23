@@ -482,6 +482,13 @@ export function TestExperience() {
   const currentQuestion = questions[questionIndex];
   const progress = (questionIndex / questions.length) * 100;
 
+  console.log({
+  phase,
+  questionIndex,
+  questionsLength: questions.length,
+  currentQuestionId: currentQuestion?.id,
+});
+
   const handleAnswer = (optionId: string) => {
     setAnswers((prev) => ({ ...prev, [currentQuestion.id]: optionId }));
 

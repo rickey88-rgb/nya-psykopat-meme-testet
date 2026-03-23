@@ -375,6 +375,18 @@ export const questions: Question[] = [
       { id: 'd', label: 'Something that should never be let loose into the world.', darkness: 5, weights: w(5, 2, 2, 1, 1, 4) },
     ],
   },
+  {
+    id: 'q31',
+    type: 'forced',
+    prompt: 'What do you see first?',
+    options: [
+      { id: 'a', label: 'A face', darkness: 0, weights: w(0, 0, 0, 0, 0, 0) },
+      { id: 'b', label: 'Two figures', darkness: 0, weights: w(0, 0, 0, 0, 0, 0) },
+      { id: 'c', label: 'An animal', darkness: 0, weights: w(0, 0, 0, 0, 0, 0) },
+      { id: 'd', label: 'Just shapes', darkness: 0, weights: w(0, 0, 0, 0, 0, 0) },
+    ],
+  },
+
 ];
 
 export const analysisSteps = [
