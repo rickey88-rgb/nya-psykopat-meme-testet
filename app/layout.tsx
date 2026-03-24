@@ -3,6 +3,9 @@ import './globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.officialpsychopathtest.com'),
+  alternates: {
+    canonical: '/',
+  },
   title: 'Psykopattestet',
   description: 'Mörkt, brutalt och viralt meme-test med demonisk estetik.',
 };
