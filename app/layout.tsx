@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.officialpsychopathtest.com'),
   title: 'Psykopattestet',
   description: 'Mörkt, brutalt och viralt meme-test med demonisk estetik.',
 };
