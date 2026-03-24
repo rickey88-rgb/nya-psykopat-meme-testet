@@ -268,7 +268,13 @@ function AnalysisPanel({ done, stepIndex }: { done: boolean; stepIndex: number }
   );
 }
 
-function PaywallPanel({ onUnlock }: { onUnlock: () => void }) {
+function PaywallPanel({
+  onUnlock,
+  rorschachPercent,
+}: {
+  onUnlock: () => void;
+  rorschachPercent: number;
+}) {
   useEffect(() => {
     sendGAEvent('event', 'view_prepaywall');
   }, []);
@@ -293,6 +299,20 @@ function PaywallPanel({ onUnlock }: { onUnlock: () => void }) {
         harder to dismiss the closer you look. Unlock your full result to see what the test
         detected, which traits scored highest, and what your overall profile really points to.
       </p>
+      <div
+  style={{
+    margin: '0 auto 18px',
+    maxWidth: 420,
+    textAlign: 'center',
+  }}
+>
+  <div style={{ color: '#8fa0b6', fontSize: '0.78rem', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+    Rorschach image
+  </div>
+  <div style={{ color: '#d9e1ec', fontSize: '0.98rem', marginTop: 6 }}>
+    Only {rorschachPercent}% noticed the same thing first.
+  </div>
+</div>
       <div style={{ display: 'grid', gap: 12, maxWidth: 420, margin: '0 auto 18px' }}>
         <div
           style={{
@@ -548,6 +568,15 @@ setTimeout(() => {
     }
   };
 
+  const rorschachPercentByAnswer: Record<string, number> = {
+  a: 3,
+  b: 6,
+  c: 9,
+  d: 14,
+};
+
+const rorschachPercent = rorschachPercentByAnswer[answers.q31] ?? 3;
+
   return (
     <div className="page-shell" style={{ minHeight: '100svh', padding: '20px 0 40px', position: 'relative' }}>
       {pulseToken > 0 && (
@@ -682,7 +711,9 @@ setTimeout(() => {
         )}
 
         {phase === 'analysis' && <AnalysisPanel done={false} stepIndex={analysisStep} />}
-        {phase === 'paywall' && <PaywallPanel onUnlock={handleUnlock} />}
+       {phase === 'paywall' && (
+  <PaywallPanel onUnlock={handleUnlock} rorschachPercent={rorschachPercent} />
+)}
         {phase === 'result' && (
           <>
             <ResultCard answers={answers} />
