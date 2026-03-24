@@ -8,7 +8,7 @@ type Phase = 'warning' | 'questions' | 'transition' | 'analysis' | 'paywall' | '
 
 const pulseCheckpoints = new Set([6, 12, 18, 24, 30]);
 const ANSWERS_STORAGE_KEY = 'psychopath_test_answers';
-const PAYMENT_LINK_URL = 'https://buy.stripe.com/test_14AfZg6V0bKVdv3cqT9AA02';
+const PAYMENT_LINK_URL = 'https://buy.stripe.com/eVq6oGa530fTa0Dcb60gw05';
 
 function StepLabel({ index }: { index: number }) {
   if (index < 6) return <span>The first layer</span>;
