@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { analysisSteps, questions, type Question } from '@/lib/test-data';
 import { computeResult, type AnswerMap } from '@/lib/test-engine';
 import { sendGAEvent } from '@next/third-parties/google';
@@ -499,8 +499,13 @@ export function TestExperience() {
   questionsLength: questions.length,
   currentQuestionId: currentQuestion?.id,
 });
-
+const answerLockRef = useRef(false);
   const handleAnswer = (optionId: string) => {
+    if (answerLockRef.current) return;
+answerLockRef.current = true;
+setTimeout(() => {
+  answerLockRef.current = false;
+}, 350);
     setAnswers((prev) => ({ ...prev, [currentQuestion.id]: optionId }));
 
     const nextIndex = questionIndex + 1;
