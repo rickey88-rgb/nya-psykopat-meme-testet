@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { analysisSteps, questions, type Question } from '@/lib/test-data';
 import { computeResult, type AnswerMap } from '@/lib/test-engine';
-
+import { sendGAEvent } from '@next/third-parties/google';
 type Phase = 'warning' | 'questions' | 'transition' | 'analysis' | 'paywall' | 'result';
 
 const pulseCheckpoints = new Set([6, 12, 18, 24, 30]);
@@ -269,6 +269,10 @@ function AnalysisPanel({ done, stepIndex }: { done: boolean; stepIndex: number }
 }
 
 function PaywallPanel({ onUnlock }: { onUnlock: () => void }) {
+  useEffect(() => {
+    sendGAEvent('event', 'view_prepaywall');
+  }, []);
+
   return (
     <section className="glass-panel" style={{ padding: '28px 20px 24px', textAlign: 'center' }}>
       <div className="section-kicker">Your result is ready</div>
