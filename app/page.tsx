@@ -166,7 +166,7 @@ export default function HomePage() {
           </div>
 
           <h2 className="section-title" style={{ marginBottom: 14 }}>
-            A more structured look at psychopathy-related traits
+            This test will tell if you are a psychopath or not
           </h2>
 
           <p
