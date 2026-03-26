@@ -1,4 +1,4 @@
-import Image from 'next/image';
+
 import Link from 'next/link';
 
 const traitBlocks = [
@@ -45,33 +45,7 @@ export default function HomePage() {
           }}
         />
 
-        <div
-          style={{
-            position: 'absolute',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            bottom: 'clamp(280px, 38svh, 380px)',
-            width: 'min(112vw, 780px)',
-            height: 'min(66svh, 620px)',
-            pointerEvents: 'none',
-            zIndex: 1,
-            opacity: 0.9,
-            filter: 'drop-shadow(0 24px 70px rgba(0,0,0,0.82))',
-          }}
-        >
-          <Image
-            src="/hero-psychopath-v1.png"
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            style={{
-              objectFit: 'cover',
-              objectPosition: 'center top',
-            }}
-          />
-        </div>
-
+        
         <div
           style={{
             position: 'absolute',
