@@ -327,7 +327,7 @@ function PaywallPanel({
         </div>
       </div>
       <button className="cta-button" style={{ width: '100%', maxWidth: 420 }} onClick={onUnlock}>
-        Unlock My Full Result  $4.99
+        Unlock My Full Result  $5.99
       </button>
       <div style={{ marginTop: 12, color: '#8fa0b6', fontSize: '0.88rem' }}>
         One-time payment only. No subscription. Instant access.
