@@ -7,8 +7,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
-  title: 'Psykopattestet',
-  description: 'Mörkt, brutalt och viralt meme-test med demonisk estetik.',
+  title: 'Official Psychopath Test',
+  description: 'Take the Official Psychopath Test. 30 questions. 3 minutes. Instant result.',
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
